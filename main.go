@@ -14,11 +14,17 @@ func main() {
 
 	p := &templ.Person{Name: "Leon",
 		Age:    50,
-		Emails: []string{"mail@tr", "mail@ibm"},
+		Emails: []string{"mail@tr", "mail@ibm", "stop@here@"},
 		Jobs:   []*templ.Job{&job1, &job2},
 	}
 
 	if err := p.PrintBasic(os.Stdout); err != nil {
 		log.Fatal(err.Error())
 	}
+
+	//	if err := p.PrintEmail(os.Stdout); err != nil {
+	//		log.Fatal(err.Error())
+	//	}
+
+	p.PrintVar(os.Stdout)
 }
